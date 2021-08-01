@@ -18,7 +18,7 @@
     
     
       
-        <title>クイックスタート - ja_timex documentation</title>
+        <title>クイックスタート - ja-timex documentation</title>
       
     
     
@@ -82,7 +82,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="ヘッダー">
-    <a href=".." title="ja_timex documentation" class="md-header__button md-logo" aria-label="ja_timex documentation" data-md-component="logo">
+    <a href=".." title="ja-timex documentation" class="md-header__button md-logo" aria-label="ja-timex documentation" data-md-component="logo">
       
   <img src="../img/logo.png" alt="logo">
 
@@ -94,7 +94,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            ja_timex documentation
+            ja-timex documentation
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -200,12 +200,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="ja_timex documentation" class="md-nav__button md-logo" aria-label="ja_timex documentation" data-md-component="logo">
+    <a href=".." title="ja-timex documentation" class="md-nav__button md-logo" aria-label="ja-timex documentation" data-md-component="logo">
       
   <img src="../img/logo.png" alt="logo">
 
     </a>
-    ja_timex documentation
+    ja-timex documentation
   </label>
   
     <div class="md-nav__source">
@@ -594,13 +594,13 @@
 </code></pre></div>
 <p>詳しくは<a href="../timex3/">TIMEX3タグの仕様</a>を参照ください。</p>
 <h2 id="pythondatetime">Pythonのdatetimeに変換する<a class="headerlink" href="#pythondatetime" title="Permanent link">&para;</a></h2>
-<p>日付表現は、<code>TIMEX</code>クラスからPythonのdatetime形式に変換することができます。
+<p>日付表現は、<code>TIMEX</code>クラスからPythonのdatetime形式に変換することができます。</p>
 <div class="highlight"><pre><span></span><code><span class="n">In</span> <span class="p">[]:</span> <span class="n">timex</span> <span class="o">=</span> <span class="n">timexes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="c1"># &lt;TIMEX3 tid=&quot;t0&quot; type=&quot;DATE&quot; value=&quot;2008-04-XX&quot; text=&quot;2008年4月&quot;&gt;</span>
 
 <span class="n">In</span> <span class="p">[]:</span> <span class="n">timex</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">()</span>
 <span class="n">Out</span><span class="p">[]:</span> <span class="n">DateTime</span><span class="p">(</span><span class="mi">2008</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tzinfo</span><span class="o">=</span><span class="n">Timezone</span><span class="p">(</span><span class="s1">&#39;Asia/Tokyo&#39;</span><span class="p">))</span>
-</code></pre></div></p>
+</code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>日付表現で不足している情報があった場合、<code>year</code>は実行時の年、<code>month</code>および<code>day</code>は<code>1</code>が補完されます。</p>
