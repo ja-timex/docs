@@ -1,0 +1,978 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="自然言語で書かれた時間情報表現を抽出/規格化するルールベースの解析器のPythonパッケージ">
+      
+      
+      
+        <meta name="author" content="Yuki Okuda (yag_ays)">
+      
+      
+      <link rel="icon" href="../favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.1">
+    
+    
+      
+        <title>TIMEX3タグ - ja_timex documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.1118c9be.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ba0d045b.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#timex3" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href=".." title="ja_timex documentation" class="md-header__button md-logo" aria-label="ja_timex documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 17a1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1 1 1 0 0 0-1 1m0-14v4h2V5.08c3.39.49 6 3.39 6 6.92a7 7 0 0 1-7 7 7 7 0 0 1-7-7c0-1.68.59-3.22 1.58-4.42L12 13l1.41-1.41-6.8-6.8v.02C4.42 6.45 3 9.05 3 12a9 9 0 0 0 9 9 9 9 0 0 0 9-9 9 9 0 0 0-9-9m6 9a1 1 0 0 0-1-1 1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1M6 12a1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1 1 1 0 0 0-1 1z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ja_timex documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              TIMEX3タグ
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="クリア" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/yagays/ja-timex/" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ja_timex documentation" class="md-nav__button md-logo" aria-label="ja_timex documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 17a1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1 1 1 0 0 0-1 1m0-14v4h2V5.08c3.39.49 6 3.39 6 6.92a7 7 0 0 1-7 7 7 7 0 0 1-7-7c0-1.68.59-3.22 1.58-4.42L12 13l1.41-1.41-6.8-6.8v.02C4.42 6.45 3 9.05 3 12a9 9 0 0 0 9 9 9 9 0 0 0 9-9 9 9 0 0 0-9-9m6 9a1 1 0 0 0-1-1 1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1M6 12a1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1 1 1 0 0 0-1 1z"/></svg>
+
+    </a>
+    ja_timex documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/yagays/ja-timex/" title="リポジトリへ" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        User Guide
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="User Guide" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          User Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        インストール
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quick_start/" class="md-nav__link">
+        クイックスタート
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/" class="md-nav__link">
+        具体例
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          TIMEX3タグ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        TIMEX3タグ
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ja-timextimex3" class="md-nav__link">
+    ja-timexにおけるTIMEX3タグ
+  </a>
+  
+    <nav class="md-nav" aria-label="ja-timexにおけるTIMEX3タグ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tid" class="md-nav__link">
+    @tid
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type" class="md-nav__link">
+    @type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value" class="md-nav__link">
+    @value
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#freq" class="md-nav__link">
+    @freq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quant" class="md-nav__link">
+    @quant
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mod" class="md-nav__link">
+    @mod
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    小西らおよび成澤の定義との差異
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../definition_glossary/" class="md-nav__link">
+        用語集
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../policy/" class="md-nav__link">
+        実装方針
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        Release
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Release" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Release
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/" class="md-nav__link">
+        更新履歴
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ja-timextimex3" class="md-nav__link">
+    ja-timexにおけるTIMEX3タグ
+  </a>
+  
+    <nav class="md-nav" aria-label="ja-timexにおけるTIMEX3タグ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tid" class="md-nav__link">
+    @tid
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type" class="md-nav__link">
+    @type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value" class="md-nav__link">
+    @value
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#freq" class="md-nav__link">
+    @freq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quant" class="md-nav__link">
+    @quant
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mod" class="md-nav__link">
+    @mod
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    小西らおよび成澤の定義との差異
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/yagays/ja-timex/edit/master/docs/timex3.md" title="編集" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="timex3">TIMEX3タグ<a class="headerlink" href="#timex3" title="Permanent link">&para;</a></h1>
+<p>TIMEX3タグは、TimeMLで提唱されたタグ仕様です。日本語におけるTIMEX3タグの仕様は小西らや成澤により定義されており、<code>ja_timex</code>においてもそれらの定義を元にした。</p>
+<h2 id="ja-timextimex3">ja-timexにおけるTIMEX3タグ<a class="headerlink" href="#ja-timextimex3" title="Permanent link">&para;</a></h2>
+<p>TIMEX3タグは、下記の属性を持ちます。</p>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>内容</th>
+<th>例</th>
+<th>条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@tid</td>
+<td>入力文中に一意に付与される識別子</td>
+<td><code>t1</code></td>
+<td>必須</td>
+</tr>
+<tr>
+<td>@type</td>
+<td>表現の分類。DATE, TIME, DURATION, SETの値を取る。</td>
+<td><code>DATE</code></td>
+<td>必須</td>
+</tr>
+<tr>
+<td>@value</td>
+<td>時間情報表現が含意する値</td>
+<td><code>2021-07-18</code></td>
+<td>必須</td>
+</tr>
+<tr>
+<td>@freq</td>
+<td>頻度集合表現における頻度が起こる回数</td>
+<td><code>2X</code></td>
+<td>頻度集合表現のみ</td>
+</tr>
+<tr>
+<td>@quant</td>
+<td>頻度集合表現における頻度の性質</td>
+<td><code>EACH</code></td>
+<td>頻度集合表現のみ</td>
+</tr>
+<tr>
+<td>@mod</td>
+<td>時間情報表現の補足情報としてのモダリティ</td>
+<td><code>APPROX</code></td>
+<td>任意</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tid"><code>@tid</code><a class="headerlink" href="#tid" title="Permanent link">&para;</a></h3>
+<p><code>@tid</code>は、入力テキストの中で各TIMEX3タグに対して一意に付与される識別子です。<code>t0</code>から始まり、1ずつ値が増えていきます。</p>
+<h3 id="type"><code>@type</code><a class="headerlink" href="#type" title="Permanent link">&para;</a></h3>
+<p><code>@type</code>は、以下の4つの値のうちのどれかを持ちます。</p>
+<table>
+<thead>
+<tr>
+<th>type</th>
+<th>名称</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DATE</code></td>
+<td>日付表現</td>
+<td>時間軸上での時点や時区間のうち、日単位以上の粒度で表現される位置</td>
+</tr>
+<tr>
+<td><code>TIME</code></td>
+<td>時刻表現</td>
+<td>時間軸上での時点や時区間のうち、日単位より小さな粒度で表現される位置</td>
+</tr>
+<tr>
+<td><code>DURATION</code></td>
+<td>持続時間表現</td>
+<td>任意の時区間幅を表現する量</td>
+</tr>
+<tr>
+<td><code>SET</code></td>
+<td>頻度集合表現</td>
+<td>時間軸上のある時区間の中で複数で繰り返される事象を表す、量および位置</td>
+</tr>
+</tbody>
+</table>
+<p>図を入れる</p>
+<h3 id="value"><code>@value</code><a class="headerlink" href="#value" title="Permanent link">&para;</a></h3>
+<p><code>@value</code>は対象となる時間表現の値です。抽出した時間表現に対しては、あくまでその表現単体から予測可能な値を入力するものとし、文脈を用いて補完しません。</p>
+<p>日付や時刻表現に対しては、下記のような値の型を取ります。</p>
+<table>
+<thead>
+<tr>
+<th>単位</th>
+<th>記号</th>
+<th>表現例</th>
+<th>@value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>年月日</td>
+<td>XXXX-XX-XX</td>
+<td>1980年7月7日</td>
+<td>1980-07-07</td>
+</tr>
+<tr>
+<td>曜日</td>
+<td>XXXX-WXX-X</td>
+<td>水曜日</td>
+<td>XXXX-WXX-3</td>
+</tr>
+<tr>
+<td>季節</td>
+<td>XXXX-{SP,SU, FA, WI}</td>
+<td>冬</td>
+<td>XXXX-WI</td>
+</tr>
+<tr>
+<td>四半期</td>
+<td>XXXX-QX</td>
+<td>第1四半期</td>
+<td>XXXX-Q1</td>
+</tr>
+<tr>
+<td>年度</td>
+<td>FYXXXX</td>
+<td>1998年度</td>
+<td>FYXXXX</td>
+</tr>
+<tr>
+<td>世紀</td>
+<td>XXXX</td>
+<td>11世紀</td>
+<td>10XX</td>
+</tr>
+<tr>
+<td>紀元前</td>
+<td>BCXXXX</td>
+<td>紀元前202年</td>
+<td>BC0202</td>
+</tr>
+<tr>
+<td>時刻</td>
+<td>XXXX-XX-XXTXX:XX:XX</td>
+<td>2006年8月8日午前8時45分30秒</td>
+<td>2006-08-08T08:45:30</td>
+</tr>
+<tr>
+<td>時刻</td>
+<td>TXX:XX:XX</td>
+<td>午前8時45分30秒</td>
+<td>T08:45:30</td>
+</tr>
+</tbody>
+</table>
+<p>また、持続時間表現に対しては下記のような値の型を取ります。</p>
+<table>
+<thead>
+<tr>
+<th>単位</th>
+<th>記号</th>
+<th>表現例</th>
+<th>@value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>年</td>
+<td>PnY</td>
+<td>3年間</td>
+<td>P3Y</td>
+</tr>
+<tr>
+<td>月</td>
+<td>PnM</td>
+<td>2ヶ月</td>
+<td>P2M</td>
+</tr>
+<tr>
+<td>日</td>
+<td>PnD</td>
+<td>5日</td>
+<td>P5D</td>
+</tr>
+<tr>
+<td>週</td>
+<td>PnW</td>
+<td>1週間</td>
+<td>P1W</td>
+</tr>
+<tr>
+<td>時間</td>
+<td>PTnH</td>
+<td>3時間</td>
+<td>PT3H</td>
+</tr>
+<tr>
+<td>分</td>
+<td>PTnM</td>
+<td>30分</td>
+<td>PT30M</td>
+</tr>
+<tr>
+<td>秒</td>
+<td>PTnS</td>
+<td>9秒80</td>
+<td>PT9.80S</td>
+</tr>
+</tbody>
+</table>
+<p>これらを組み合わせることで、任意の持続時間を表現することができます。日付表現の接頭辞<code>P</code>と時刻表現の接頭辞<code>PT</code>は重複せず、<code>P1Y2M</code>や<code>PT1H30M</code>といったように降順で表現します。</p>
+<h3 id="freq"><code>@freq</code><a class="headerlink" href="#freq" title="Permanent link">&para;</a></h3>
+<p><code>@freq</code>は頻度集合表現において頻度が起こる回数を表す属性で、<code>@value</code>属性と同様の型の値が入ります。なお、回数表現としての<code>nX</code>は<code>n</code>回であることを表し、<code>X</code>は回数を表す記号です。値が不明なときに用いられる不定表現ではありません。</p>
+<h3 id="quant"><code>@quant</code><a class="headerlink" href="#quant" title="Permanent link">&para;</a></h3>
+<p><code>@quant</code>は頻度集合表現において頻度の性質を表す属性で、判定が不可能な場合には<code>None</code>が、可能な場合には下記の2つのうちのどちらかの値を取ります。</p>
+<table>
+<thead>
+<tr>
+<th>@quant</th>
+<th>定義</th>
+<th>例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EACH</td>
+<td>間隔を空けずに実行される表現</td>
+<td>毎日, 毎月</td>
+</tr>
+<tr>
+<td>EVERY</td>
+<td>間隔を空けて定期的に実行される表現</td>
+<td>3日おき, 6ヶ月ごと</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mod"><code>@mod</code><a class="headerlink" href="#mod" title="Permanent link">&para;</a></h3>
+<p><code>@mod</code>は時間情報表現のモダリティを表す属性で、日付表現および時刻表現において、判定が不可能な場合には<code>None</code>が、可能な場合には下記の中のどれか1つの値を取ります。</p>
+<table>
+<thead>
+<tr>
+<th>@mod</th>
+<th>定義</th>
+<th>例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>START</td>
+<td>日付/時刻表現の初期</td>
+<td>始め、初期</td>
+</tr>
+<tr>
+<td>MID</td>
+<td>日付/時刻表現の中期</td>
+<td>半ば、中ごろ</td>
+</tr>
+<tr>
+<td>END</td>
+<td>日付/時刻表現の後期</td>
+<td>末、暮れ</td>
+</tr>
+<tr>
+<td>BEFORE</td>
+<td>日付/時刻表現より前</td>
+<td>前</td>
+</tr>
+<tr>
+<td>AFTER</td>
+<td>日付/時刻表現より後</td>
+<td>過ぎ</td>
+</tr>
+<tr>
+<td>ON_OR_BEFORE</td>
+<td>日付/時刻表現以前</td>
+<td>以前</td>
+</tr>
+<tr>
+<td>ON_OR_AFTER</td>
+<td>日付/時刻表現以後</td>
+<td>以降、以来</td>
+</tr>
+<tr>
+<td>APPROX</td>
+<td>近似表現</td>
+<td>ごろ</td>
+</tr>
+</tbody>
+</table>
+<p>また、持続時間表現における<code>@mod</code>は、下記の中のどれか1つの値を取ります。</p>
+<table>
+<thead>
+<tr>
+<th>@mod</th>
+<th>定義</th>
+<th>例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BEFORE</td>
+<td>ある時点を基準としたときの前</td>
+<td>1年前</td>
+</tr>
+<tr>
+<td>AFTER</td>
+<td>ある時点を基準としたときの後</td>
+<td>1年後</td>
+</tr>
+<tr>
+<td>NOW</td>
+<td>ある時点を基準としたときの前後</td>
+<td>今年</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_1">小西らおよび成澤の定義との差異<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>ja-timexでは人間によるアノテーションの情報を表現する必要がなく、またルールベース単体での十分な文脈情報を利用した補完が不可能なため、<code>TIMEX</code>クラスではアノテーションに関する以下の属性を削除しています。</p>
+<ul>
+<li><code>@valueFromSurface</code>: 文脈情報を考慮した正規化をしない<code>@value</code></li>
+<li><code>@temporalFunction</code>: 文脈情報より曖昧性解消可能かどうかを表す真偽値</li>
+<li><code>@rangeStart</code>: 範囲表現の起点を表す真偽値</li>
+<li><code>@rangeEnd</code>: 範囲表現の終点を表す真偽値</li>
+</ul>
+<p>そのかわり、<code>TIMEX</code>クラスを継承した<code>AnnotatedTIMEX</code>クラスにて、上記の4つの属性を付与できるようにしています。</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="フッター">
+      
+        
+        <a href="../examples/" class="md-footer__link md-footer__link--prev" aria-label="前: 具体例" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                前
+              </span>
+              具体例
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../FAQ/" class="md-footer__link md-footer__link--next" aria-label="次: FAQ" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                次
+              </span>
+              FAQ
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand"], "translations": {"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.716f8af4.min.js"></script>
+      
+    
+  </body>
+</html>
