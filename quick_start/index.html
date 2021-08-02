@@ -230,10 +230,49 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" data-md-state="indeterminate" type="checkbox" id="__nav_1" checked>
+      
+      <label class="md-nav__link" for="__nav_1">
+        Home
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Home" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Home
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
-        Home
+        ja-timex
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
+        イントロダクション
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -381,13 +420,13 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
       
       <label class="md-nav__link" for="__nav_3">
-        Document
+        Documentation
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="Document" data-md-level="1">
+      <nav class="md-nav" aria-label="Documentation" data-md-level="1">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
-          Document
+          Documentation
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -582,6 +621,9 @@
 
 <span class="n">In</span> <span class="p">[]:</span> <span class="n">timex</span><span class="o">.</span><span class="n">value</span>
 <span class="n">Out</span><span class="p">[]:</span> <span class="s1">&#39;2008-04-XX&#39;</span>
+
+<span class="n">In</span> <span class="p">[]:</span> <span class="n">timex</span><span class="o">.</span><span class="n">text</span>
+<span class="n">Out</span><span class="p">[]:</span> <span class="s1">&#39;2008年4月&#39;</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="n">In</span> <span class="p">[]:</span> <span class="n">timex</span> <span class="o">=</span> <span class="n">timexes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 <span class="c1"># &lt;TIMEX3 tid=&quot;t1&quot; type=&quot;SET&quot; value=&quot;P1W&quot; freq=&quot;3X&quot; text=&quot;週に3回&quot;&gt;</span>
@@ -591,8 +633,11 @@
 
 <span class="n">In</span> <span class="p">[]:</span> <span class="n">timex</span><span class="o">.</span><span class="n">freq</span>
 <span class="n">Out</span><span class="p">[]:</span> <span class="s1">&#39;3X&#39;</span>
+
+<span class="n">In</span> <span class="p">[]:</span> <span class="n">timex</span><span class="o">.</span><span class="n">text</span>
+<span class="n">Out</span><span class="p">[]:</span> <span class="s1">&#39;週に3回&#39;</span>
 </code></pre></div>
-<p>詳しくは<a href="../timex3/">TIMEX3タグの仕様</a>を参照ください。</p>
+<p>仕様の詳細は<a href="../timex3/">TIMEX3タグの仕様</a>を参照ください。</p>
 <h2 id="pythondatetime">Pythonのdatetimeに変換する<a class="headerlink" href="#pythondatetime" title="Permanent link">&para;</a></h2>
 <p>日付表現は、<code>TIMEX</code>クラスからPythonのdatetime形式に変換することができます。</p>
 <div class="highlight"><pre><span></span><code><span class="n">In</span> <span class="p">[]:</span> <span class="n">timex</span> <span class="o">=</span> <span class="n">timexes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
