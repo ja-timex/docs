@@ -18,7 +18,7 @@
     
     
       
-        <title>具体例 - ja-timex documentation</title>
+        <title>基準日時と補完 - ja-timex documentation</title>
       
     
     
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              具体例
+              基準日時と補完
             
           </span>
         </div>
@@ -330,6 +330,18 @@
             
   
   
+  
+    <li class="md-nav__item">
+      <a href="../examples/" class="md-nav__link">
+        具体例
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
     
   
   
@@ -342,12 +354,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          具体例
+          基準日時と補完
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        具体例
+        基準日時と補完
       </a>
       
         
@@ -365,43 +377,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    日付表現 1
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    日付表現 2
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    時刻表現
+    基準日時の設定
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    頻度集合表現
+    基準日時による日付/時刻表現の補完
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#1_1" class="md-nav__link">
-    持続時間表現 1
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2_1" class="md-nav__link">
-    持続時間表現 2
+  <a href="#_4" class="md-nav__link">
+    基準日時による期間表現の補完
   </a>
   
 </li>
@@ -410,18 +401,6 @@
   
 </nav>
       
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../reference_datetime/" class="md-nav__link">
-        基準日時と補完
-      </a>
     </li>
   
 
@@ -578,43 +557,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    日付表現 1
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    日付表現 2
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    時刻表現
+    基準日時の設定
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    頻度集合表現
+    基準日時による日付/時刻表現の補完
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#1_1" class="md-nav__link">
-    持続時間表現 1
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2_1" class="md-nav__link">
-    持続時間表現 2
+  <a href="#_4" class="md-nav__link">
+    基準日時による期間表現の補完
   </a>
   
 </li>
@@ -631,92 +589,53 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/yagays/ja-timex/blob/master/docs/docs/examples.md" title="編集" class="md-content__button md-icon">
+                  <a href="https://github.com/yagays/ja-timex/blob/master/docs/docs/reference_datetime.md" title="編集" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="_1">具体例<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="1">日付表現 1<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>【2021年1月21日】大統領宣誓を行うジョー・バイデン。 20日、アメリカ合衆国の首都ワシントンD.C.において、大統領就任式が行われた。
+                <h1 id="_1">基準日時と補完<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p><code>TimexParser</code>クラスには基準日時（Reference datetime）を設定することができます。これにより<code>TIMEX</code>クラスにおける日付や期間への変換において、表層表現からは判定することができない情報を補完します。解析対象の文書が書かれた日時が既知の場合において、明示的に基準日時を指定することで、より情報を付加した状態の日付/時間抽出が可能になります。</p>
+<h2 id="_2">基準日時の設定<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><code>TimexParser</code>クラスの<code>reference</code>引数に<code>pendulum</code>の<code>DateTime</code>インスタンスを指定します。</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pendulum</span>
+<span class="kn">from</span> <span class="nn">ja_timex</span> <span class="kn">import</span> <span class="n">TimexParser</span>
+
+<span class="n">timex_parser</span> <span class="o">=</span> <span class="n">TimexParser</span><span class="p">(</span><span class="n">reference</span><span class="o">=</span><span class="n">pendulum</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2010</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="n">tz</span><span class="o">=</span><span class="s2">&quot;Asia/Tokyo&quot;</span><span class="p">))</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;TIMEX3</span> <span class="na">tid=</span><span class="s">&quot;t0&quot;</span> <span class="na">type=</span><span class="s">&quot;DATE&quot;</span> <span class="na">value=</span><span class="s">&quot;2021-01-21&quot;</span> <span class="na">text=</span><span class="s">&quot;2021年1月21日&quot;</span><span class="nt">&gt;</span>,
-<span class="nt">&lt;TIMEX3</span> <span class="na">tid=</span><span class="s">&quot;t1&quot;</span> <span class="na">type=</span><span class="s">&quot;DATE&quot;</span> <span class="na">value=</span><span class="s">&quot;XXXX-XX-20&quot;</span> <span class="na">text=</span><span class="s">&quot;20日&quot;</span><span class="nt">&gt;</span>
+<h2 id="_3">基準日時による日付/時刻表現の補完<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>日付や時間の解析では、Pythonの日付型/時間型に変換する<code>to_datetime()</code>メソッドにおいて、基準日時を元にして補完されます。</p>
+<p>例として、2010年7月18日を基準日時としたときに、<code>12月30日</code>という文字列を解析します。</p>
+<div class="highlight"><pre><span></span><code><span class="n">In</span> <span class="p">[]:</span> <span class="n">timexes</span> <span class="o">=</span> <span class="n">timex_parser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;12月30日&quot;</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[]:</span> <span class="n">timexes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">Out</span><span class="p">[]:</span> <span class="o">&lt;</span><span class="n">TIMEX3</span> <span class="n">tid</span><span class="o">=</span><span class="s2">&quot;t0&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;DATE&quot;</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;XXXX-12-30&quot;</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;12月30日&quot;</span><span class="o">&gt;</span>
+
+<span class="n">In</span> <span class="p">[]:</span> <span class="n">timexes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[]:</span> <span class="n">DateTime</span><span class="p">(</span><span class="mi">2010</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tzinfo</span><span class="o">=</span><span class="n">Timezone</span><span class="p">(</span><span class="s1">&#39;Asia/Tokyo&#39;</span><span class="p">))</span>
 </code></pre></div>
-<p><a href="https://ja.wikinews.org/wiki/%E3%83%90%E3%82%A4%E3%83%87%E3%83%B3%E7%B1%B3%E5%A4%A7%E7%B5%B1%E9%A0%98%E3%81%AE%E5%B0%B1%E4%BB%BB%E5%BC%8F%E3%81%8C%E9%96%8B%E5%82%AC%E3%81%95%E3%82%8C%E3%82%8B">バイデン米大統領の就任式が開催される - ウィキニュース</a></p>
-<div class="admonition tips">
-<p class="admonition-title">Tips</p>
-<p>文中の<code>20日</code>のように、たとえ前後の文脈から日付が推定できたとしても、ja-timexでは表層表現の情報のみを利用します。</p>
-</div>
-<hr />
-<h2 id="2">日付表現 2<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>気象庁が大雪とその被害について命名したのは1963年の「昭和38年1月豪雪」（三八豪雪）以外に例が無く、43年ぶり史上二度目の命名となった。
+<p><code>TIMEX</code>クラスの<code>value</code>には基準日時に関係なく表層表現による値が入りますが、<code>to_datetime()</code>メソッドでdatetimeに変換した際には基準日時の2010年が補完されます。</p>
+<h2 id="_4">基準日時による期間表現の補完<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>期間表現の解析では、基準日時が設定されていない場合にはPythonの日付型/時間型に<code>to_duration()</code>メソッドのみで変換できますが、設定されている場合には<code>to_datetime()</code>メソッドによって期間を考慮した変換も可能になります。</p>
+<p>例として、2021年7月18日を基準日時としたときに、<code>1日前</code>という文字列を解析します。</p>
+<div class="highlight"><pre><span></span><code><span class="n">In</span> <span class="p">[]:</span> <span class="n">timex_parser</span> <span class="o">=</span> <span class="n">TimexParser</span><span class="p">(</span><span class="n">reference</span><span class="o">=</span><span class="n">pendulum</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="n">tz</span><span class="o">=</span><span class="s2">&quot;Asia/Tokyo&quot;</span><span class="p">))</span>
+
+<span class="n">In</span> <span class="p">[]:</span> <span class="n">timex_parser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;1日前&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">to_duration</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[]:</span> <span class="n">Duration</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[]:</span> <span class="n">timex_parser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;1日前&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[]:</span> <span class="n">DateTime</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tzinfo</span><span class="o">=</span><span class="n">Timezone</span><span class="p">(</span><span class="s1">&#39;Asia/Tokyo&#39;</span><span class="p">))</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;TIMEX3</span> <span class="na">tid=</span><span class="s">&quot;t0&quot;</span> <span class="na">type=</span><span class="s">&quot;DATE&quot;</span> <span class="na">value=</span><span class="s">&quot;1963-XX-XX&quot;</span> <span class="na">text=</span><span class="s">&quot;1963年&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;TIMEX3</span> <span class="na">tid=</span><span class="s">&quot;t1&quot;</span> <span class="na">type=</span><span class="s">&quot;DATE&quot;</span> <span class="na">value=</span><span class="s">&quot;1963-01-XX&quot;</span> <span class="na">text=</span><span class="s">&quot;昭和38年1月&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;TIMEX3</span> <span class="na">tid=</span><span class="s">&quot;t2&quot;</span> <span class="na">type=</span><span class="s">&quot;DATE&quot;</span> <span class="na">value=</span><span class="s">&quot;0043-XX-XX&quot;</span> <span class="na">text=</span><span class="s">&quot;43年&quot;</span><span class="nt">&gt;</span>
+<p>以上のように、2021年7月18日の1日前である2021年7月17日が返ります。</p>
+<p>一方、基準日時を設定していない場合には、<code>to_datetime()</code>メソッドでは下記のように<code>None</code>が返ります。</p>
+<div class="highlight"><pre><span></span><code><span class="n">In</span> <span class="p">[]:</span> <span class="n">timex_parser</span> <span class="o">=</span> <span class="n">TimexParser</span><span class="p">()</span>
+
+<span class="n">In</span> <span class="p">[]:</span> <span class="n">timex_parser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;1日前&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">to_duration</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[]:</span> <span class="n">Duration</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[]:</span> <span class="n">timex_parser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;1日前&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">()</span>
+<span class="c1"># None</span>
 </code></pre></div>
-<p><a href="https://ja.wikinews.org/wiki/%E4%BB%8A%E5%86%AC%E3%81%AE%E5%A4%A7%E9%9B%AA%E3%81%AF%E3%80%8E%E5%B9%B3%E6%88%9018%E5%B9%B4%E8%B1%AA%E9%9B%AA%E3%80%8F%E3%80%81%E6%AD%BB%E8%80%85%E6%95%B0%E3%81%AF%E6%88%A6%E5%BE%8C2%E7%95%AA%E7%9B%AE%E3%81%AB">今冬の大雪は『平成18年豪雪』、死者数は戦後2番目に - ウィキニュース</a></p>
-<div class="admonition tips">
-<p class="admonition-title">Tips</p>
-<p><code>昭和</code>といった和暦は、西暦に変換されます。</p>
-</div>
-<hr />
-<h2 id="_2">時刻表現<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>気象庁によれば、大型で非常に強い台風第13号 「タリム」は31日午後10時45分（日本時間、UTC+9）現在、台湾の東海上にあって、西北西に進んでいる。
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;TIMEX3</span> <span class="na">tid=</span><span class="s">&quot;t0&quot;</span> <span class="na">type=</span><span class="s">&quot;DATE&quot;</span> <span class="na">value=</span><span class="s">&quot;XXXX-XX-31&quot;</span> <span class="na">text=</span><span class="s">&quot;31日&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;TIMEX3</span> <span class="na">tid=</span><span class="s">&quot;t1&quot;</span> <span class="na">type=</span><span class="s">&quot;TIME&quot;</span> <span class="na">value=</span><span class="s">&quot;T22-45-XX&quot;</span> <span class="na">text=</span><span class="s">&quot;午後10時45分&quot;</span><span class="nt">&gt;</span>
-</code></pre></div>
-<p><a href="https://ja.wikinews.org/wiki/%E5%8F%B0%E9%A2%A813%E5%8F%B7%E3%80%81%E5%85%88%E5%B3%B6%E8%AB%B8%E5%B3%B6%E3%81%8B%E3%82%89%E5%8F%B0%E6%B9%BE%E3%81%B8%E2%88%9214%E5%8F%B7%E3%82%82%E6%B2%96%E7%B8%84%E3%81%AB%E5%90%91%E3%81%8B%E3%81%86">台風13号、先島諸島から台湾へ−14号も沖縄に向かう - ウィキニュース</a></p>
-<div class="admonition tips">
-<p class="admonition-title">Tips</p>
-<p><code>午前</code>、<code>午後</code>などが付く12時間表記は、24時間表記に変換されます。</p>
-</div>
-<hr />
-<h2 id="_3">頻度集合表現<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>両リーグで異なっている試合競技方法の調整などの会議を週1回程度行い、10月末までに合意することを目指している
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;TIMEX3</span> <span class="na">tid=</span><span class="s">&quot;t0&quot;</span> <span class="na">type=</span><span class="s">&quot;SET&quot;</span> <span class="na">value=</span><span class="s">&quot;P1W&quot;</span> <span class="na">freq=</span><span class="s">&quot;1X&quot;</span> <span class="na">text=</span><span class="s">&quot;週1回&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;TIMEX3</span> <span class="na">tid=</span><span class="s">&quot;t1&quot;</span> <span class="na">type=</span><span class="s">&quot;DATE&quot;</span> <span class="na">value=</span><span class="s">&quot;XXXX-10-XX&quot;</span> <span class="na">mod=</span><span class="s">&quot;END&quot;</span> <span class="na">text=</span><span class="s">&quot;10月末&quot;</span><span class="nt">&gt;</span>
-</code></pre></div>
-<p><a href="https://ja.wikinews.org/wiki/%E6%97%A5%E6%9C%AC%E3%81%AE%E3%83%90%E3%82%B9%E3%82%B1%E3%83%83%E3%83%88%E3%83%9C%E3%83%BC%E3%83%AB%E3%83%AA%E3%83%BC%E3%82%B0%E4%B8%80%E6%9C%AC%E5%8C%96%E3%81%B8%E5%90%91%E3%81%91%E3%81%9F%E7%B5%84%E7%B9%94%E5%A7%94%E5%93%A1%E4%BC%9A%E7%99%BA%E8%B6%B3">日本のバスケットボールリーグ一本化へ向けた組織委員会発足 - ウィキニュース</a></p>
-<div class="admonition tips">
-<p class="admonition-title">Tips</p>
-<p><code>10月末</code>のように日付に付加情報が付いている場合は、<code>@mod=END</code>のように表現されます。</p>
-</div>
-<hr />
-<h2 id="1_1">持続時間表現 1<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>奈良市環境清美部の男性職員 (42) が、2001年からの5年9カ月余りで8日しか出勤していないのにも関わらず、給与がほぼ満額支給されていたことが明らかになった。
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;TIMEX3</span> <span class="na">tid=</span><span class="s">&quot;t0&quot;</span> <span class="na">type=</span><span class="s">&quot;DATE&quot;</span> <span class="na">value=</span><span class="s">&quot;2001-XX-XX&quot;</span> <span class="na">text=</span><span class="s">&quot;2001年&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;TIMEX3</span> <span class="na">tid=</span><span class="s">&quot;t1&quot;</span> <span class="na">type=</span><span class="s">&quot;DURATION&quot;</span> <span class="na">value=</span><span class="s">&quot;P5Y9M&quot;</span> <span class="na">text=</span><span class="s">&quot;5年9カ月&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;TIMEX3</span> <span class="na">tid=</span><span class="s">&quot;t2&quot;</span> <span class="na">type=</span><span class="s">&quot;DATE&quot;</span> <span class="na">value=</span><span class="s">&quot;XXXX-XX-08&quot;</span> <span class="na">text=</span><span class="s">&quot;8日&quot;</span><span class="nt">&gt;</span>
-</code></pre></div>
-<p><a href="https://ja.wikinews.org/wiki/%E5%A5%88%E8%89%AF%E5%B8%82%E8%81%B7%E5%93%A1%E3%80%815%E5%B9%B4%E9%96%93%E3%81%BB%E3%81%A8%E3%82%93%E3%81%A9%E5%87%BA%E5%8B%A4%E3%81%9B%E3%81%9A%E7%B5%A6%E4%B8%8E%E6%BA%80%E9%A1%8D">奈良市職員、5年間ほとんど出勤せず給与満額 - ウィキニュース</a></p>
-<div class="admonition tips">
-<p class="admonition-title">Tips</p>
-<p>生物の年齢は、数値表現であって時間情報表現ではないので取得しません</p>
-</div>
-<hr />
-<h2 id="2_1">持続時間表現 2<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>12月14日、日本の宇宙航空研究開発機構（JAXA）は、今月6日に地球に帰還した小惑星探査機「はやぶさ2」のカプセルから、リュウグウ由来とみられる砂粒状の粒子を採取することに成功したと発表した
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;TIMEX3</span> <span class="na">tid=</span><span class="s">&quot;t0&quot;</span> <span class="na">type=</span><span class="s">&quot;DATE&quot;</span> <span class="na">value=</span><span class="s">&quot;XXXX-12-14&quot;</span> <span class="na">text=</span><span class="s">&quot;12月14日&quot;</span><span class="nt">&gt;</span>,
-<span class="nt">&lt;TIMEX3</span> <span class="na">tid=</span><span class="s">&quot;t1&quot;</span> <span class="na">type=</span><span class="s">&quot;DURATION&quot;</span> <span class="na">value=</span><span class="s">&quot;P0M&quot;</span> <span class="na">mod=</span><span class="s">&quot;NOW&quot;</span> <span class="na">text=</span><span class="s">&quot;今月&quot;</span><span class="nt">&gt;</span>,
-<span class="nt">&lt;TIMEX3</span> <span class="na">tid=</span><span class="s">&quot;t2&quot;</span> <span class="na">type=</span><span class="s">&quot;DATE&quot;</span> <span class="na">value=</span><span class="s">&quot;XXXX-XX-06&quot;</span> <span class="na">text=</span><span class="s">&quot;6日&quot;</span><span class="nt">&gt;</span>
-</code></pre></div>
-<p><a href="https://ja.wikinews.org/wiki/%E3%81%AF%E3%82%84%E3%81%B6%E3%81%952%E5%B8%B0%E9%82%84%E3%82%AB%E3%83%97%E3%82%BB%E3%83%AB_%E5%B0%8F%E6%83%91%E6%98%9F%E3%83%AA%E3%83%A5%E3%82%A6%E3%82%B0%E3%82%A6%E7%94%B1%E6%9D%A5%E3%81%AE%E7%B2%92%E5%AD%90%E3%81%A8%E3%82%AC%E3%82%B9%E3%82%92%E7%A2%BA%E8%AA%8D">はやぶさ2帰還カプセル 小惑星リュウグウ由来の粒子とガスを確認 - ウィキニュース</a></p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p><code>今月6日</code>は<code>今月</code>,<code>6日</code>に分割してタグ付けを行います。成澤[2]では1つのまとまりとして扱うように定義されていましたが、ja-timexでは分割します。</p>
-<p>その理由として、TIMEX3タグの定義上は日付表現として「いずれかの月」か「そもそも月の情報が不明」かを区別することができません。<code>XXXX-XX-06</code>という表記しかできず、今回の場合は<code>今月6日</code>のうちの<code>今月</code>の情報が表層表現から欠落してしまうため、情報の欠損を防ぐために分割しています。</p>
-<p><code>今月</code>は、表層表現からではどの月かを推定することが不可能なため、日付表現とは扱わず持続時間表現として扱います。</p>
-</div>
-<div class="admonition tips">
-<p class="admonition-title">Tips</p>
-<p>持続時間表現としての<code>今月</code>は、<code>value="P0M" mod="NOW"</code>という2つの組み合わせで表現します。これは<code>先月</code>なら<code>value="P1M" mod="BEFORE"</code>、<code>来月</code>なら<code>value="P1M" mod="AFTER"</code>と表現することを踏まえたものです。</p>
-</div>
                 
               
               
@@ -736,7 +655,7 @@
     <nav class="md-footer__inner md-grid" aria-label="フッター">
       
         
-        <a href="../quick_start/" class="md-footer__link md-footer__link--prev" aria-label="前: クイックスタート" rel="prev">
+        <a href="../examples/" class="md-footer__link md-footer__link--prev" aria-label="前: 具体例" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -745,20 +664,20 @@
               <span class="md-footer__direction">
                 前
               </span>
-              クイックスタート
+              具体例
             </div>
           </div>
         </a>
       
       
         
-        <a href="../reference_datetime/" class="md-footer__link md-footer__link--next" aria-label="次: 基準日時と補完" rel="next">
+        <a href="../timex3/" class="md-footer__link md-footer__link--next" aria-label="次: TIMEX3タグ" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 次
               </span>
-              基準日時と補完
+              TIMEX3タグ
             </div>
           </div>
           <div class="md-footer__button md-icon">
