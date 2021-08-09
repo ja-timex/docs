@@ -405,8 +405,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference_datetime/" class="md-nav__link">
-        基準日時と補完
+      <a href="../to_datetime/" class="md-nav__link">
+        日付型/時間型への変換
       </a>
     </li>
   
@@ -651,23 +651,15 @@
 </code></pre></div>
 <p>仕様の詳細は<a href="../timex3/">TIMEX3タグの仕様</a>を参照ください。</p>
 <h2 id="pythondatetime">Pythonのdatetimeに変換する<a class="headerlink" href="#pythondatetime" title="Permanent link">&para;</a></h2>
-<p>日付表現は、<code>TIMEX</code>クラスからPythonのdatetime形式に変換することができます。</p>
+<p>日付表現は、<code>TIMEX</code>クラスからPythonのdatetimeオブジェクトに変換することができます。</p>
 <div class="highlight"><pre><span></span><code><span class="n">In</span> <span class="p">[]:</span> <span class="n">timex</span> <span class="o">=</span> <span class="n">timexes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="c1"># &lt;TIMEX3 tid=&quot;t0&quot; type=&quot;DATE&quot; value=&quot;2008-04-XX&quot; text=&quot;2008年4月&quot;&gt;</span>
 
 <span class="n">In</span> <span class="p">[]:</span> <span class="n">timex</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">()</span>
 <span class="n">Out</span><span class="p">[]:</span> <span class="n">DateTime</span><span class="p">(</span><span class="mi">2008</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tzinfo</span><span class="o">=</span><span class="n">Timezone</span><span class="p">(</span><span class="s1">&#39;Asia/Tokyo&#39;</span><span class="p">))</span>
 </code></pre></div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>日付表現で不足している情報があった場合、<code>year</code>は実行時の年、<code>month</code>および<code>day</code>は<code>1</code>が補完されます。</p>
-</div>
-<div class="admonition tips">
-<p class="admonition-title">Tips</p>
-<p>ja-timexでは<a href="https://pendulum.eustace.io/"><code>pendulum</code></a>というdatetimeの扱いを容易するパッケージを利用しています。<code>pendulum</code>は基本的にPythonのdatetime/timedeltaを継承して実装されており、互換性があります。</p>
-</div>
 <h2 id="pythontimedelta">Pythonのtimedeltaに変換する<a class="headerlink" href="#pythontimedelta" title="Permanent link">&para;</a></h2>
-<p>持続時間表現は、<code>TIMEX</code>クラスからPythonのtimedelta形式に変換することができます。</p>
+<p>持続時間表現は、<code>TIMEX</code>クラスからPythonのtimedeltaオブジェクトに変換することができます。</p>
 <div class="highlight"><pre><span></span><code><span class="n">In</span> <span class="p">[]:</span> <span class="n">timex</span> <span class="o">=</span> <span class="n">timexes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
 <span class="c1"># &lt;TIMEX3 tid=&quot;t2&quot; type=&quot;DURATION&quot; value=&quot;PT1H&quot; text=&quot;1時間&quot;&gt;</span>
 
