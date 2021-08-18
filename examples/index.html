@@ -379,28 +379,49 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    時刻表現
+  <a href="#3" class="md-nav__link">
+    日付表現 3
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    頻度集合表現
+  <a href="#4" class="md-nav__link">
+    日付表現 4
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#1_1" class="md-nav__link">
-    持続時間表現 1
+    時刻表現 1
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#2_1" class="md-nav__link">
+    時刻表現 2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    頻度集合表現
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    持続時間表現 1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
     持続時間表現 2
   </a>
   
@@ -592,28 +613,49 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    時刻表現
+  <a href="#3" class="md-nav__link">
+    日付表現 3
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    頻度集合表現
+  <a href="#4" class="md-nav__link">
+    日付表現 4
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#1_1" class="md-nav__link">
-    持続時間表現 1
+    時刻表現 1
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#2_1" class="md-nav__link">
+    時刻表現 2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    頻度集合表現
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    持続時間表現 1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
     持続時間表現 2
   </a>
   
@@ -659,10 +701,36 @@
 <p><a href="https://ja.wikinews.org/wiki/%E4%BB%8A%E5%86%AC%E3%81%AE%E5%A4%A7%E9%9B%AA%E3%81%AF%E3%80%8E%E5%B9%B3%E6%88%9018%E5%B9%B4%E8%B1%AA%E9%9B%AA%E3%80%8F%E3%80%81%E6%AD%BB%E8%80%85%E6%95%B0%E3%81%AF%E6%88%A6%E5%BE%8C2%E7%95%AA%E7%9B%AE%E3%81%AB">今冬の大雪は『平成18年豪雪』、死者数は戦後2番目に - ウィキニュース</a></p>
 <div class="admonition tips">
 <p class="admonition-title">Tips</p>
-<p><code>昭和</code>といった和暦は、西暦に変換されます。</p>
+<p><code>昭和</code>といった和暦は、<code>@value</code>の値では西暦に変換されます。</p>
 </div>
 <hr />
-<h2 id="_2">時刻表現<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="3">日付表現 3<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>アルプス山脈の山々に囲まれた深い谷の中にあり、毎年11月中旬から2月初めまでの83日間にわたっては山の陰となって日中でも太陽の光が当たらない。
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;TIMEX3</span> <span class="na">tid=</span><span class="s">&quot;t0&quot;</span> <span class="na">type=</span><span class="s">&quot;SET&quot;</span> <span class="na">value=</span><span class="s">&quot;P1Y&quot;</span> <span class="na">quant=</span><span class="s">&quot;EACH&quot;</span> <span class="na">text=</span><span class="s">&quot;毎年&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;TIMEX3</span> <span class="na">tid=</span><span class="s">&quot;t1&quot;</span> <span class="na">type=</span><span class="s">&quot;DATE&quot;</span> <span class="na">value=</span><span class="s">&quot;XXXX-11-XX&quot;</span> <span class="na">mod=</span><span class="s">&quot;MID&quot;</span> <span class="na">text=</span><span class="s">&quot;11月中旬&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;TIMEX3</span> <span class="na">tid=</span><span class="s">&quot;t2&quot;</span> <span class="na">type=</span><span class="s">&quot;DATE&quot;</span> <span class="na">value=</span><span class="s">&quot;XXXX-02-XX&quot;</span> <span class="na">mod=</span><span class="s">&quot;START&quot;</span> <span class="na">text=</span><span class="s">&quot;2月初め&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;TIMEX3</span> <span class="na">tid=</span><span class="s">&quot;t3&quot;</span> <span class="na">type=</span><span class="s">&quot;DURATION&quot;</span> <span class="na">value=</span><span class="s">&quot;P83D&quot;</span> <span class="na">text=</span><span class="s">&quot;83日間&quot;</span><span class="nt">&gt;</span>
+</code></pre></div>
+<p><a href="https://ja.wikinews.org/wiki/%E9%99%BD%E3%81%AE%E5%BD%93%E3%81%9F%E3%82%89%E3%81%AA%E3%81%84%E5%B1%B1%E9%99%B0%E3%81%AE%E6%9D%91%E3%81%AB%E5%85%89%E3%82%92%E2%94%80%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2%E3%81%A7%E5%B7%A8%E5%A4%A7%E9%8F%A1%E8%A8%AD%E7%BD%AE">陽の当たらない山陰の村に光を─イタリアで巨大鏡設置 - ウィキニュース</a></p>
+<div class="admonition tips">
+<p class="admonition-title">Tips</p>
+<p><code>11月中旬</code>のように日付に付加情報が付いている場合は、<code>@value=XXXX-11-XX</code>のように月の値だけが入り、付加情報は<code>@mod=MID</code>のように表現されます。</p>
+</div>
+<hr />
+<h2 id="4">日付表現 4<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>高松塚古墳は7世紀末から8世紀はじめにかけて造られたと見られる古墳で、雨水の浸入やカビの発生などにより石室内の壁画の劣化が問題になっている。
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;TIMEX3</span> <span class="na">tid=</span><span class="s">&quot;t0&quot;</span> <span class="na">type=</span><span class="s">&quot;DATE&quot;</span> <span class="na">value=</span><span class="s">&quot;06XX&quot;</span> <span class="na">mod=</span><span class="s">&quot;END&quot;</span> <span class="na">text=</span><span class="s">&quot;7世紀末&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;TIMEX3</span> <span class="na">tid=</span><span class="s">&quot;t1&quot;</span> <span class="na">type=</span><span class="s">&quot;DATE&quot;</span> <span class="na">value=</span><span class="s">&quot;07XX&quot;</span> <span class="na">mod=</span><span class="s">&quot;START&quot;</span> <span class="na">text=</span><span class="s">&quot;8世紀はじめ&quot;</span><span class="nt">&gt;</span>
+</code></pre></div>
+<p><a href="https://ja.wikinews.org/wiki/%E9%AB%98%E6%9D%BE%E5%A1%9A%E5%8F%A4%E5%A2%B3%E3%81%AE%E3%82%AB%E3%83%93%E6%8B%A1%E5%A4%A7%E3%80%81%E3%80%8C%E9%A3%9B%E9%B3%A5%E7%BE%8E%E4%BA%BA%E3%80%8D%E3%81%AB%E3%82%82%E8%A2%AB%E5%AE%B3">高松塚古墳のカビ拡大、「飛鳥美人」にも被害 - ウィキニュース</a></p>
+<div class="admonition tips">
+<p class="admonition-title">Tips</p>
+<p>世紀という表現は年単位での幅を持つため、年の下2桁を<code>XX</code>として表現します。例えば、7世紀は西暦601年から西暦700年までの間を指すため、<code>06XX</code>と表現します。</p>
+</div>
+<hr />
+<h2 id="1_1">時刻表現 1<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>気象庁によれば、大型で非常に強い台風第13号 「タリム」は31日午後10時45分（日本時間、UTC+9）現在、台湾の東海上にあって、西北西に進んでいる。
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;TIMEX3</span> <span class="na">tid=</span><span class="s">&quot;t0&quot;</span> <span class="na">type=</span><span class="s">&quot;DATE&quot;</span> <span class="na">value=</span><span class="s">&quot;XXXX-XX-31&quot;</span> <span class="na">text=</span><span class="s">&quot;31日&quot;</span><span class="nt">&gt;</span>
@@ -674,7 +742,21 @@
 <p><code>午前</code>、<code>午後</code>などが付く12時間表記は、24時間表記に変換されます。</p>
 </div>
 <hr />
-<h2 id="_3">頻度集合表現<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="2_1">時刻表現 2<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>数学の試験時間は25日午後1時半から同3時半にかけてで、最も早い書き込みでは、午後1時37分に問題を掲載した上で、
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;TIMEX3</span> <span class="na">tid=</span><span class="s">&quot;t0&quot;</span> <span class="na">type=</span><span class="s">&quot;DATE&quot;</span> <span class="na">value=</span><span class="s">&quot;XXXX-XX-25&quot;</span> <span class="na">text=</span><span class="s">&quot;25日&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;TIMEX3</span> <span class="na">tid=</span><span class="s">&quot;t1&quot;</span> <span class="na">type=</span><span class="s">&quot;TIME&quot;</span> <span class="na">value=</span><span class="s">&quot;T13-30-XX&quot;</span> <span class="na">text=</span><span class="s">&quot;午後1時半&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;TIMEX3</span> <span class="na">tid=</span><span class="s">&quot;t2&quot;</span> <span class="na">type=</span><span class="s">&quot;TIME&quot;</span> <span class="na">value=</span><span class="s">&quot;T03-30-XX&quot;</span> <span class="na">text=</span><span class="s">&quot;3時半&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;TIMEX3</span> <span class="na">tid=</span><span class="s">&quot;t3&quot;</span> <span class="na">type=</span><span class="s">&quot;TIME&quot;</span> <span class="na">value=</span><span class="s">&quot;T13-37-XX&quot;</span> <span class="na">text=</span><span class="s">&quot;午後1時37分&quot;</span><span class="nt">&gt;</span>
+</code></pre></div>
+<p><a href="https://ja.wikinews.org/wiki/%E4%BA%AC%E9%83%BD%E5%A4%A7%E5%AD%A6%E3%81%AA%E3%81%A9%E3%81%A7%E5%85%A5%E8%A9%A6%E5%95%8F%E9%A1%8C%E3%81%8C%E3%83%8D%E3%83%83%E3%83%88%E6%8E%B2%E7%A4%BA%E6%9D%BF%E3%81%AB%E6%8A%95%E7%A8%BF%E3%81%95%E3%82%8C%E3%82%8B">京都大学などで入試問題がネット掲示板に投稿される - ウィキニュース</a></p>
+<div class="admonition tips">
+<p class="admonition-title">Tips</p>
+<p><code>午後1時半</code>のような<code>半</code>という表現は、<code>30分</code>と解釈します。</p>
+</div>
+<hr />
+<h2 id="_2">頻度集合表現<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>両リーグで異なっている試合競技方法の調整などの会議を週1回程度行い、10月末までに合意することを目指している
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;TIMEX3</span> <span class="na">tid=</span><span class="s">&quot;t0&quot;</span> <span class="na">type=</span><span class="s">&quot;SET&quot;</span> <span class="na">value=</span><span class="s">&quot;P1W&quot;</span> <span class="na">freq=</span><span class="s">&quot;1X&quot;</span> <span class="na">text=</span><span class="s">&quot;週1回&quot;</span><span class="nt">&gt;</span>
@@ -683,10 +765,10 @@
 <p><a href="https://ja.wikinews.org/wiki/%E6%97%A5%E6%9C%AC%E3%81%AE%E3%83%90%E3%82%B9%E3%82%B1%E3%83%83%E3%83%88%E3%83%9C%E3%83%BC%E3%83%AB%E3%83%AA%E3%83%BC%E3%82%B0%E4%B8%80%E6%9C%AC%E5%8C%96%E3%81%B8%E5%90%91%E3%81%91%E3%81%9F%E7%B5%84%E7%B9%94%E5%A7%94%E5%93%A1%E4%BC%9A%E7%99%BA%E8%B6%B3">日本のバスケットボールリーグ一本化へ向けた組織委員会発足 - ウィキニュース</a></p>
 <div class="admonition tips">
 <p class="admonition-title">Tips</p>
-<p><code>10月末</code>のように日付に付加情報が付いている場合は、<code>@mod=END</code>のように表現されます。</p>
+<p><code>週1回</code>の<code>1回</code>は<code>@freq=1X</code>と表現します。</p>
 </div>
 <hr />
-<h2 id="1_1">持続時間表現 1<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h2>
+<h2 id="1_2">持続時間表現 1<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>奈良市環境清美部の男性職員 (42) が、2001年からの5年9カ月余りで8日しか出勤していないのにも関わらず、給与がほぼ満額支給されていたことが明らかになった。
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;TIMEX3</span> <span class="na">tid=</span><span class="s">&quot;t0&quot;</span> <span class="na">type=</span><span class="s">&quot;DATE&quot;</span> <span class="na">value=</span><span class="s">&quot;2001-XX-XX&quot;</span> <span class="na">text=</span><span class="s">&quot;2001年&quot;</span><span class="nt">&gt;</span>
@@ -696,10 +778,14 @@
 <p><a href="https://ja.wikinews.org/wiki/%E5%A5%88%E8%89%AF%E5%B8%82%E8%81%B7%E5%93%A1%E3%80%815%E5%B9%B4%E9%96%93%E3%81%BB%E3%81%A8%E3%82%93%E3%81%A9%E5%87%BA%E5%8B%A4%E3%81%9B%E3%81%9A%E7%B5%A6%E4%B8%8E%E6%BA%80%E9%A1%8D">奈良市職員、5年間ほとんど出勤せず給与満額 - ウィキニュース</a></p>
 <div class="admonition tips">
 <p class="admonition-title">Tips</p>
+<p><code>5年9カ月</code>といったように持続時間表現で複数の単位の組み合わせた表現の場合は、<code>@value</code>の値は<code>P5Y9M</code>のように複数の値が列挙されます。この際、日付表現を表す接頭辞<code>P</code>または時刻表現を表す<code>PT</code>は重複しません。</p>
+</div>
+<div class="admonition tips">
+<p class="admonition-title">Tips</p>
 <p>生物の年齢は、数値表現であって時間情報表現ではないので取得しません</p>
 </div>
 <hr />
-<h2 id="2_1">持続時間表現 2<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h2>
+<h2 id="2_2">持続時間表現 2<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>12月14日、日本の宇宙航空研究開発機構（JAXA）は、今月6日に地球に帰還した小惑星探査機「はやぶさ2」のカプセルから、リュウグウ由来とみられる砂粒状の粒子を採取することに成功したと発表した
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;TIMEX3</span> <span class="na">tid=</span><span class="s">&quot;t0&quot;</span> <span class="na">type=</span><span class="s">&quot;DATE&quot;</span> <span class="na">value=</span><span class="s">&quot;XXXX-12-14&quot;</span> <span class="na">text=</span><span class="s">&quot;12月14日&quot;</span><span class="nt">&gt;</span>,
@@ -715,7 +801,7 @@
 </div>
 <div class="admonition tips">
 <p class="admonition-title">Tips</p>
-<p>持続時間表現としての<code>今月</code>は、<code>value="P0M" mod="NOW"</code>という2つの組み合わせで表現します。これは<code>先月</code>なら<code>value="P1M" mod="BEFORE"</code>、<code>来月</code>なら<code>value="P1M" mod="AFTER"</code>と表現することを踏まえたものです。</p>
+<p>持続時間表現としての<code>今月</code>は、<code>@value=P0M @mod=NOW</code>という2つの組み合わせで表現します。これは<code>先月</code>なら<code>@value=P1M @mod=BEFORE</code>、<code>来月</code>なら<code>@value=P1M @mod=AFTER</code>と表現することを踏まえたものです。</p>
 </div>
                 
               
