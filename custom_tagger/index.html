@@ -18,7 +18,7 @@
     
     
       
-        <title>用語集 - ja-timex documentation</title>
+        <title>独自パターンの抽出 - ja-timex documentation</title>
       
     
     
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              用語集
+              独自パターンの抽出
             
           </span>
         </div>
@@ -283,12 +283,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       <label class="md-nav__link" for="__nav_2">
         User Guide
@@ -352,11 +354,71 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../custom_tagger/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          独自パターンの抽出
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         独自パターンの抽出
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    方法
+  </a>
+  
+    <nav class="md-nav" aria-label="方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-customtagger" class="md-nav__link">
+    1. CustomTaggerを作成する
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-timexparser" class="md-nav__link">
+    2. TimexParserの引数に指定する
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -373,14 +435,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
       
       <label class="md-nav__link" for="__nav_3">
         Documentation
@@ -420,21 +480,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../definition_glossary/" class="md-nav__link">
         用語集
       </a>
-      
     </li>
   
 
@@ -518,6 +568,41 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    方法
+  </a>
+  
+    <nav class="md-nav" aria-label="方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-customtagger" class="md-nav__link">
+    1. CustomTaggerを作成する
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-timexparser" class="md-nav__link">
+    2. TimexParserの引数に指定する
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -528,22 +613,74 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/yagays/ja-timex/blob/master/docs/docs/definition_glossary.md" title="編集" class="md-content__button md-icon">
+                  <a href="https://github.com/yagays/ja-timex/blob/master/docs/docs/custom_tagger.md" title="編集" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="_1">用語集<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<dl>
-<dt>時間情報表現</dt>
-<dd>人間が言葉として表現する日付や時間などのこと。ここでは特に、日付表現、時刻表現、持続時間表現、頻度集合表現の4つを含む表現の総称。</dd>
-<dt>正規化</dt>
-<dd>時間情報の表層表現上から読み取ることのできない曖昧性を解消し、時間軸上の特定の位置表現に変換すること</dd>
-<dt>定時間情報表現</dt>
-<dd>表層表現だけで正規化ができる表現</dd>
-<dt>不定時間情報表現</dt>
-<dd>表層表現だけで正規化ができない表現</dd>
-</dl>
+                <h1 id="_1">独自パターンの抽出<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p><code>ja-timex</code>では、ユーザが独自の時間情報表現の抽出パターンを記述することができます。</p>
+<p>独自の時間情報表現のために必要な要素は以下の3つです。</p>
+<ul>
+<li>ルールを記述した<code>Pattern</code>クラスのリスト</li>
+<li><code>Pattern</code>クラスで抽出した結果を<code>TIMEX</code>クラスに変換する関数</li>
+<li>パターンを持つ<code>BaseTagger</code>を継承したクラス</li>
+</ul>
+<h2 id="_2">方法<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>ここでは、「皇紀XXXX年」という過去に用いられていた紀年法を抽出する方法を例に説明します。</p>
+<h3 id="1-customtagger">1. CustomTaggerを作成する<a class="headerlink" href="#1-customtagger" title="Permanent link">&para;</a></h3>
+<p>下記のように、<code>CustomTagger</code>を作成します。</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+
+<span class="kn">from</span> <span class="nn">ja_timex.tag</span> <span class="kn">import</span> <span class="n">TIMEX</span>
+<span class="kn">from</span> <span class="nn">ja_timex.tagger</span> <span class="kn">import</span> <span class="n">BaseTagger</span>
+<span class="kn">from</span> <span class="nn">ja_timex.pattern.place</span> <span class="kn">import</span> <span class="n">Pattern</span>
+
+<span class="n">custom_pattern</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">Pattern</span><span class="p">(</span>
+        <span class="n">re_pattern</span><span class="o">=</span><span class="s2">&quot;皇紀(?P&lt;kouki_year&gt;[0-9]{1,4})年&quot;</span><span class="p">,</span>
+        <span class="n">parse_func</span><span class="o">=</span><span class="n">parse_kouki</span><span class="p">,</span>
+        <span class="n">option</span><span class="o">=</span><span class="p">{},</span>
+    <span class="p">)</span>
+<span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">parse_kouki</span><span class="p">(</span><span class="n">re_match</span><span class="p">:</span> <span class="n">re</span><span class="o">.</span><span class="n">Match</span><span class="p">,</span> <span class="n">pattern</span><span class="p">:</span> <span class="n">Pattern</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TIMEX</span><span class="p">:</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">re_match</span><span class="o">.</span><span class="n">groupdict</span><span class="p">()</span>
+    <span class="n">span</span> <span class="o">=</span> <span class="n">re_match</span><span class="o">.</span><span class="n">span</span><span class="p">()</span>
+
+    <span class="c1"># 皇紀から西暦に変換</span>
+    <span class="n">year</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="s2">&quot;kouki_year&quot;</span><span class="p">])</span> <span class="o">-</span> <span class="mi">660</span>
+
+    <span class="k">return</span> <span class="n">TIMEX</span><span class="p">(</span>
+        <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;DATE&quot;</span><span class="p">,</span>
+        <span class="n">value</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2">-XX-XX&quot;</span><span class="p">,</span>
+        <span class="n">text</span><span class="o">=</span><span class="n">re_match</span><span class="o">.</span><span class="n">group</span><span class="p">(),</span>
+        <span class="n">mod</span><span class="o">=</span><span class="n">pattern</span><span class="o">.</span><span class="n">option</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;mod&quot;</span><span class="p">),</span>
+        <span class="n">parsed</span><span class="o">=</span><span class="n">args</span><span class="p">,</span>
+        <span class="n">span</span><span class="o">=</span><span class="n">span</span><span class="p">,</span>
+        <span class="n">pattern</span><span class="o">=</span><span class="n">pattern</span><span class="p">,</span>
+    <span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">CustomTagger</span><span class="p">(</span><span class="n">BaseTagger</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">patterns</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Pattern</span><span class="p">]</span> <span class="o">=</span> <span class="n">custom_pattern</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">patterns</span> <span class="o">=</span> <span class="n">patterns</span>
+</code></pre></div>
+<p>抽出したい表現のパターンを<code>Pattern</code>クラスとして作成します。1つのクラスが1つの抽出パターンおよび変換方法を表し、抽出のための正規表現<code>re_pattern</code>、その変換方法のロジックを実装した<code>parse_func</code>、付加情報の<code>option</code>から構成されます。</p>
+<p><code>parse_func</code>に指定する関数では、正規表現で抽出した結果をもとに<code>TIMEX</code>タグを構築します。抽出する数値を利用するためには、正規表現の中で名前付きグループ<code>(?P&lt;name&gt;...)</code>といった表記を利用します。例として挙げた<code>parse_kouki()</code>では、<code>kouki_year</code>という名前で皇紀の年号を取得し、西暦に変換するために660を引くという操作をしています。</p>
+<p>そして<code>BaseTagger</code>クラスを継承した<code>CustomTagger</code>クラスを作成し、コンストラクタの引数として<code>List[Pattern]</code>の変数を指定します。</p>
+<h3 id="2-timexparser">2. TimexParserの引数に指定する<a class="headerlink" href="#2-timexparser" title="Permanent link">&para;</a></h3>
+<p>1.で作成した<code>CustomTagger</code>のインスタンスを、<code>TimexParser</code>の<code>custom_tagger</code>引数に指定します。</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">ja_timex.timex</span> <span class="kn">import</span> <span class="n">TimexParser</span>
+
+<span class="n">timex_parser</span> <span class="o">=</span> <span class="n">TimexParser</span><span class="p">(</span><span class="n">custom_tagger</span><span class="o">=</span><span class="n">CustomTagger</span><span class="p">())</span>
+</code></pre></div>
+<p>それ以外は同じように処理をし、抽出した結果を取得することができます。</p>
+<div class="highlight"><pre><span></span><code><span class="n">In</span> <span class="p">[]:</span> <span class="n">timex_parser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;西暦2021年は皇紀2681年です&quot;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[]:</span>
+<span class="p">[</span><span class="o">&lt;</span><span class="n">TIMEX3</span> <span class="n">tid</span><span class="o">=</span><span class="s2">&quot;t0&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;DATE&quot;</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;2021-XX-XX&quot;</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;西暦2021年&quot;</span><span class="o">&gt;</span><span class="p">,</span>
+ <span class="o">&lt;</span><span class="n">TIMEX3</span> <span class="n">tid</span><span class="o">=</span><span class="s2">&quot;t1&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;DATE&quot;</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;2021-XX-XX&quot;</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;皇紀2681年&quot;</span><span class="o">&gt;</span><span class="p">]</span>
+</code></pre></div>
                 
               
               
@@ -563,7 +700,7 @@
     <nav class="md-footer__inner md-grid" aria-label="フッター">
       
         
-        <a href="../FAQ/" class="md-footer__link md-footer__link--prev" aria-label="前: FAQ" rel="prev">
+        <a href="../to_datetime/" class="md-footer__link md-footer__link--prev" aria-label="前: 日付型/時間型への変換" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -572,20 +709,20 @@
               <span class="md-footer__direction">
                 前
               </span>
-              FAQ
+              日付型/時間型への変換
             </div>
           </div>
         </a>
       
       
         
-        <a href="../policy/" class="md-footer__link md-footer__link--next" aria-label="次: 実装方針" rel="next">
+        <a href="../timex3/" class="md-footer__link md-footer__link--next" aria-label="次: TIMEX3タグ" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 次
               </span>
-              実装方針
+              TIMEX3タグ
             </div>
           </div>
           <div class="md-footer__button md-icon">
