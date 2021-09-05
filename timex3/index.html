@@ -480,6 +480,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#rangestartrangeend" class="md-nav__link">
+    @rangeStartと@rangeEnd
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -686,6 +693,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#rangestartrangeend" class="md-nav__link">
+    @rangeStartと@rangeEnd
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -790,6 +804,18 @@
 <td>@mod</td>
 <td>時間情報表現の補足情報としてのモダリティ</td>
 <td><code>APPROX</code></td>
+<td>任意</td>
+</tr>
+<tr>
+<td>@rangeStart</td>
+<td>範囲表現の起点を表すタグ</td>
+<td><code>True</code></td>
+<td>任意</td>
+</tr>
+<tr>
+<td>@rangeEnd</td>
+<td>範囲表現の終点を表すタグ</td>
+<td><code>True</code></td>
 <td>任意</td>
 </tr>
 </tbody>
@@ -1061,14 +1087,15 @@
 </tr>
 </tbody>
 </table>
+<h3 id="rangestartrangeend"><code>@rangeStart</code>と<code>@rangeEnd</code><a class="headerlink" href="#rangestartrangeend" title="Permanent link">&para;</a></h3>
+<p><code>@rangeStart</code>, <code>@rangeEnd</code>は範囲表現の起点を表すタグであり、通常は<code>None</code>の値を取り、範囲表現と認められる<code>TIMEX</code>の対においてのみbool型の<code>True</code>の値を取ります。<code>@rangeStart</code>と<code>@rangeEnd</code>は必ず対になり、どちらかだけが存在する場合はありません。</p>
+<p>ja-timexの<code>TIMEX</code>タグでは<a href="https://www.python.org/dev/peps/pep-0008/">PEP8</a>の命名規則に則り、<code>TIMEX.range_start</code>および<code>TIMEX.range_end</code>というクラス変数名に対応します。</p>
 <h2 id="_1">小西らおよび成澤の定義との差異<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h3 id="_2">属性の削除<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>ja-timexでは人間によるアノテーションの情報を表現する必要がなく、またルールベース単体での十分な文脈情報を利用した補完が不可能なため、<code>TIMEX</code>クラスではアノテーションに関する以下の属性を削除しています。</p>
 <ul>
 <li><code>@valueFromSurface</code>: 文脈情報を考慮した正規化をしない<code>@value</code></li>
 <li><code>@temporalFunction</code>: 文脈情報より曖昧性解消可能かどうかを表す真偽値</li>
-<li><code>@rangeStart</code>: 範囲表現の起点を表す真偽値</li>
-<li><code>@rangeEnd</code>: 範囲表現の終点を表す真偽値</li>
 </ul>
 <p>そのかわり、<code>TIMEX</code>クラスを継承した<code>AnnotatedTIMEX</code>クラスにて、上記の4つの属性を付与できるようにしています。</p>
 <h3 id="6">「今月6日」といった表現を分割する<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
