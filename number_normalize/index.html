@@ -18,7 +18,7 @@
     
     
       
-        <title>日付型/時間型への変換 - ja-timex documentation</title>
+        <title>時刻表現の数値の正規化 - ja-timex documentation</title>
       
     
     
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              日付型/時間型への変換
+              時刻表現の数値の正規化
             
           </span>
         </div>
@@ -296,14 +296,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -366,105 +364,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          日付型/時間型への変換
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../to_datetime/" class="md-nav__link">
         日付型/時間型への変換
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="目次">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    基本的な変換
-  </a>
-  
-    <nav class="md-nav" aria-label="基本的な変換">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#datetime" class="md-nav__link">
-    日付表現のdatetimeへの変換
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#timedelta" class="md-nav__link">
-    持続時間表現のtimedeltaへの変換
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    基準日時と補完
-  </a>
-  
-    <nav class="md-nav" aria-label="基準日時と補完">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    基準日時の設定
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    基準日時による日付/時刻表現の補完
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#datetime_1" class="md-nav__link">
-    基準日時による期間表現のdatetimeへの変換
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -496,12 +400,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -536,11 +442,65 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../number_normalize/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          時刻表現の数値の正規化
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         時刻表現の数値の正規化
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#timex" class="md-nav__link">
+    正規化とTIMEXの関係
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    正規化前の数値の取得方法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    正規化前後の入力文の取得
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -668,63 +628,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#timex" class="md-nav__link">
+    正規化とTIMEXの関係
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    基本的な変換
+    正規化前の数値の取得方法
   </a>
-  
-    <nav class="md-nav" aria-label="基本的な変換">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#datetime" class="md-nav__link">
-    日付表現のdatetimeへの変換
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#timedelta" class="md-nav__link">
-    持続時間表現のtimedeltaへの変換
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    基準日時と補完
+    正規化前後の入力文の取得
   </a>
-  
-    <nav class="md-nav" aria-label="基準日時と補完">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    基準日時の設定
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    基準日時による日付/時刻表現の補完
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#datetime_1" class="md-nav__link">
-    基準日時による期間表現のdatetimeへの変換
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -740,118 +660,67 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/yagays/ja-timex/blob/master/docs/docs/to_datetime.md" title="編集" class="md-content__button md-icon">
+                  <a href="https://github.com/yagays/ja-timex/blob/master/docs/docs/number_normalize.md" title="編集" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="_1">日付型/時間型への変換<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>ja-timexでは、2通りの方法でPythonの日付型/時間型への変換ができます。</p>
-<ul>
-<li><code>to_datetime()</code>: <code>datetime</code>の変換</li>
-<li><code>to_duration()</code>: <code>timedelta</code>への変換</li>
-</ul>
-<p>各表現からの日付型/時間型への変換は以下の通りです。</p>
+                <h1 id="_1">時刻表現の数値の正規化<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p><code>ja-timex</code>では時刻表現を取得する前に、時刻表現の数値の正規化を行います。</p>
+<h2 id="timex">正規化とTIMEXの関係<a class="headerlink" href="#timex" title="Permanent link">&para;</a></h2>
+<p>時刻表現の数値の正規化では、下記のような処理が行われます。</p>
 <table>
 <thead>
 <tr>
-<th></th>
-<th>to_datetime()</th>
-<th>to_datetime() + 基準日時</th>
-<th>to_duration()</th>
+<th>処理内容</th>
+<th>正規化前</th>
+<th>正規化後</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>日付表現 <code>DATE</code></td>
-<td>○</td>
-<td>○</td>
-<td>-</td>
+<td>全角から半角への変換</td>
+<td>２０２１年</td>
+<td>2021年</td>
 </tr>
 <tr>
-<td>時間表現 <code>TIME</code></td>
-<td>-</td>
-<td>○</td>
-<td>-</td>
+<td>漢数字の算用数字化</td>
+<td>明治二十六年</td>
+<td>明治26年</td>
 </tr>
 <tr>
-<td>持続時間表現 <code>DURATION</code></td>
-<td>-</td>
-<td>○</td>
-<td>○</td>
-</tr>
-<tr>
-<td>頻度集合表現 <code>SET</code></td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
+<td>桁数を表すコンマの削除</td>
+<td>1,000時間</td>
+<td>1000時間</td>
 </tr>
 </tbody>
 </table>
-<h2 id="_2">基本的な変換<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<h3 id="datetime">日付表現のdatetimeへの変換<a class="headerlink" href="#datetime" title="Permanent link">&para;</a></h3>
-<p>日付表現は、<code>TIMEX</code>クラスからPythonのdatetimeオブジェクトに変換することができます。</p>
-<div class="highlight"><pre><span></span><code><span class="n">In</span> <span class="p">[]:</span> <span class="n">timex_parser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;2021年7月18日&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">()</span>
-<span class="n">Out</span><span class="p">[]:</span> <span class="n">DateTime</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tzinfo</span><span class="o">=</span><span class="n">Timezone</span><span class="p">(</span><span class="s1">&#39;Asia/Tokyo&#39;</span><span class="p">))</span>
-</code></pre></div>
-<p>日付表現で不足している情報があった場合、<code>year</code>は実行時の年、<code>month</code>および<code>day</code>は<code>1</code>が補完されます。</p>
-<div class="highlight"><pre><span></span><code>In []: timex_parser.parse(&quot;7月18日&quot;)[0].to_datetime()
-Out[]: DateTime(2021, 7, 18, 0, 0, 0, tzinfo=Timezone(&#39;Asia/Tokyo&#39;))
-</code></pre></div>
-<p><code>to_datetime()</code>メソッドの引数<code>tz</code>でタイムゾーンを設定することができます。初期値は<code>Asia/Tokyo</code>です。</p>
-<div class="highlight"><pre><span></span><code>In []: timex_parser.parse(&quot;2021年7月18日&quot;)[0].to_datetime(tz=&quot;UTC&quot;)
-Out[]: DateTime(2021, 7, 18, 0, 0, 0, tzinfo=Timezone(&#39;UTC&#39;))
-</code></pre></div>
-<h3 id="timedelta">持続時間表現のtimedeltaへの変換<a class="headerlink" href="#timedelta" title="Permanent link">&para;</a></h3>
-<p>持続時間表現は、<code>TIMEX</code>クラスからPythonのtimedeltaオブジェクトに変換することができます。</p>
-<div class="highlight"><pre><span></span><code><span class="n">In</span> <span class="p">[]:</span> <span class="n">timex_parser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;1時間前&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">to_duration</span><span class="p">()</span>
-<span class="n">Out</span><span class="p">[]:</span> <span class="n">Duration</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</code></pre></div>
-<div class="admonition tips">
-<p class="admonition-title">Tips</p>
-<p>ja-timexでは<a href="https://pendulum.eustace.io/"><code>pendulum</code></a>というdatetimeの扱いを容易するパッケージを利用しています。<code>pendulum</code>は基本的にPythonのdatetime/timedeltaを継承して実装されており、互換性があります。</p>
-</div>
-<h2 id="_3">基準日時と補完<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p><code>TimexParser</code>クラスには基準日時（Reference datetime）を設定することができます。これにより<code>TIMEX</code>クラスにおける日付や期間への変換において、表層表現からは判定することができない情報を補完します。解析対象の文書が書かれた日時が既知の場合において、明示的に基準日時を指定することで、より情報を付加した状態の日付/時間抽出が可能になります。</p>
-<h3 id="_4">基準日時の設定<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p><code>TimexParser</code>クラスの<code>reference</code>引数に<code>pendulum</code>の<code>DateTime</code>インスタンスを指定します。</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pendulum</span>
-<span class="kn">from</span> <span class="nn">ja_timex</span> <span class="kn">import</span> <span class="n">TimexParser</span>
-
-<span class="n">timex_parser</span> <span class="o">=</span> <span class="n">TimexParser</span><span class="p">(</span><span class="n">reference</span><span class="o">=</span><span class="n">pendulum</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2010</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="n">tz</span><span class="o">=</span><span class="s2">&quot;Asia/Tokyo&quot;</span><span class="p">))</span>
-</code></pre></div>
-<h3 id="_5">基準日時による日付/時刻表現の補完<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p>日付や時間の解析では、Pythonの日付型/時間型に変換する<code>to_datetime()</code>メソッドにおいて、基準日時を元にして補完されます。</p>
-<p>例として、2010年7月18日を基準日時としたときに、<code>12月30日</code>という文字列を解析します。</p>
-<div class="highlight"><pre><span></span><code><span class="n">In</span> <span class="p">[]:</span> <span class="n">timexes</span> <span class="o">=</span> <span class="n">timex_parser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;12月30日&quot;</span><span class="p">)</span>
-
-<span class="n">In</span> <span class="p">[]:</span> <span class="n">timexes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">Out</span><span class="p">[]:</span> <span class="o">&lt;</span><span class="n">TIMEX3</span> <span class="n">tid</span><span class="o">=</span><span class="s2">&quot;t0&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;DATE&quot;</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;XXXX-12-30&quot;</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;12月30日&quot;</span><span class="o">&gt;</span>
-
-<span class="n">In</span> <span class="p">[]:</span> <span class="n">timexes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">()</span>
-<span class="n">Out</span><span class="p">[]:</span> <span class="n">DateTime</span><span class="p">(</span><span class="mi">2010</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tzinfo</span><span class="o">=</span><span class="n">Timezone</span><span class="p">(</span><span class="s1">&#39;Asia/Tokyo&#39;</span><span class="p">))</span>
-</code></pre></div>
-<p><code>TIMEX</code>クラスの<code>value</code>には基準日時に関係なく表層表現による値が入りますが、<code>to_datetime()</code>メソッドでdatetimeに変換した際には基準日時の2010年が補完されます。</p>
-<h3 id="datetime_1">基準日時による期間表現のdatetimeへの変換<a class="headerlink" href="#datetime_1" title="Permanent link">&para;</a></h3>
-<p>期間表現の解析では、基準日時が設定されていない場合にはPythonの日付型/時間型に<code>to_duration()</code>メソッドのみで変換できますが、設定されている場合には<code>to_datetime()</code>メソッドによって期間を考慮した変換も可能になります。</p>
-<p>例として、2021年7月18日を基準日時としたときに、<code>1日前</code>という文字列を解析します。</p>
-<div class="highlight"><pre><span></span><code><span class="n">In</span> <span class="p">[]:</span> <span class="n">timex_parser</span> <span class="o">=</span> <span class="n">TimexParser</span><span class="p">(</span><span class="n">reference</span><span class="o">=</span><span class="n">pendulum</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="n">tz</span><span class="o">=</span><span class="s2">&quot;Asia/Tokyo&quot;</span><span class="p">))</span>
-
-<span class="n">In</span> <span class="p">[]:</span> <span class="n">timex_parser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;1日前&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">to_duration</span><span class="p">()</span>
-<span class="n">Out</span><span class="p">[]:</span> <span class="n">Duration</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="n">In</span> <span class="p">[]:</span> <span class="n">timex_parser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;1日前&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">()</span>
-<span class="n">Out</span><span class="p">[]:</span> <span class="n">DateTime</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tzinfo</span><span class="o">=</span><span class="n">Timezone</span><span class="p">(</span><span class="s1">&#39;Asia/Tokyo&#39;</span><span class="p">))</span>
-</code></pre></div>
-<p>以上のように、2021年7月18日の1日前である2021年7月17日が返ります。</p>
-<p>一方、基準日時を設定していない場合には、<code>to_datetime()</code>メソッドでは下記のように<code>None</code>が返ります。</p>
+<p><code>TIMEX</code>クラスのクラス変数である<code>text</code>および<code>span</code>は、<strong>正規化後</strong>のテキストおよび開始/終了位置が利用されます。下記の例では、「明治二十六年」ではなく正規化後の「明治26年」と、その文字列長に対応した開始/終了位置が利用されます。</p>
 <div class="highlight"><pre><span></span><code><span class="n">In</span> <span class="p">[]:</span> <span class="n">timex_parser</span> <span class="o">=</span> <span class="n">TimexParser</span><span class="p">()</span>
+  <span class="o">...</span><span class="p">:</span> <span class="n">timexes</span> <span class="o">=</span> <span class="n">timex_parser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;明治二十六年&quot;</span><span class="p">)</span>
 
-<span class="n">In</span> <span class="p">[]:</span> <span class="n">timex_parser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;1日前&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">to_duration</span><span class="p">()</span>
-<span class="n">Out</span><span class="p">[]:</span> <span class="n">Duration</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">In</span> <span class="p">[]:</span> <span class="n">timexes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span>
+<span class="n">Out</span><span class="p">[]:</span> <span class="s1">&#39;明治26年&#39;</span>
 
-<span class="n">In</span> <span class="p">[]:</span> <span class="n">timex_parser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;1日前&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">()</span>
-<span class="c1"># None</span>
+<span class="n">In</span> <span class="p">[]:</span> <span class="n">timexes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">span</span>
+<span class="n">Out</span><span class="p">[]:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="_2">正規化前の数値の取得方法<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>正規化前のテキストや開始/終了位置を取得するには、<code>TIMEX</code>クラスの<code>raw_text</code>および<code>raw_span</code>のクラス変数を利用します。</p>
+<div class="highlight"><pre><span></span><code><span class="n">In</span> <span class="p">[]:</span> <span class="n">timexes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">raw_text</span>
+<span class="n">Out</span><span class="p">[]:</span> <span class="s1">&#39;明治二十六年&#39;</span>
+
+<span class="n">In</span> <span class="p">[]:</span> <span class="n">timexes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">raw_span</span>
+<span class="n">Out</span><span class="p">[]:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</code></pre></div>
+<p>なお、正規化が行われない時刻表現に関しては、それぞれのクラス変数<code>text</code>と<code>raw_text</code>および<code>span</code>と<code>raw_span</code>は一致します。</p>
+<h2 id="_3">正規化前後の入力文の取得<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>正規化前後の入力文を取得するには、<code>TimexParser</code>のインスタンスの<code>raw_text</code>および<code>processed_text</code>を利用します。</p>
+<div class="highlight"><pre><span></span><code><span class="n">In</span> <span class="p">[]:</span> <span class="n">timex_parser</span><span class="o">.</span><span class="n">raw_text</span>
+<span class="n">Out</span><span class="p">[]:</span> <span class="s1">&#39;明治二十六年&#39;</span>
+
+<span class="n">In</span> <span class="p">[]:</span> <span class="n">timex_parser</span><span class="o">.</span><span class="n">processed_text</span>
+<span class="n">Out</span><span class="p">[]:</span> <span class="s1">&#39;明治26年&#39;</span>
 </code></pre></div>
                 
               
@@ -872,7 +741,7 @@ Out[]: DateTime(2021, 7, 18, 0, 0, 0, tzinfo=Timezone(&#39;UTC&#39;))
     <nav class="md-footer__inner md-grid" aria-label="フッター">
       
         
-        <a href="../examples/" class="md-footer__link md-footer__link--prev" aria-label="前: 具体例" rel="prev">
+        <a href="../timex3/" class="md-footer__link md-footer__link--prev" aria-label="前: TIMEX3タグ" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -881,20 +750,20 @@ Out[]: DateTime(2021, 7, 18, 0, 0, 0, tzinfo=Timezone(&#39;UTC&#39;))
               <span class="md-footer__direction">
                 前
               </span>
-              具体例
+              TIMEX3タグ
             </div>
           </div>
         </a>
       
       
         
-        <a href="../custom_tagger/" class="md-footer__link md-footer__link--next" aria-label="次: 独自パターンの抽出" rel="next">
+        <a href="../FAQ/" class="md-footer__link md-footer__link--next" aria-label="次: FAQ" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 次
               </span>
-              独自パターンの抽出
+              FAQ
             </div>
           </div>
           <div class="md-footer__button md-icon">
